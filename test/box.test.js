@@ -3,13 +3,13 @@ const { ethers } = require('hardhat');
 
 describe('Box Contract', function () {
 	it('Should return store 10 and return the new value', async function () {
-		const Box = await ethers.getContractFactory('Box');
-		const box = await Box.deploy();
+		const Contract = await ethers.getContractFactory('Box');
+		const contract = await Contract.deploy();
 
-		await box.deployed();
+		await contract.deployed();
 
-		await box.store(10);
+		await contract.store(10);
 
-		expect(await box.retrieve()).to.equal(10);
+		expect(await contract.retrieve()).to.equal(10);
 	});
 });
