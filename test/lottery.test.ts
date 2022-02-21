@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const { ethers } = require('hardhat');
+import { ethers } from 'hardhat';
+import { expect } from 'chai';
 
 describe('Lottery Contract', function () {
 	it('should deploy the contract, enter and get balance', async function () {

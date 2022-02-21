@@ -1,12 +1,12 @@
-const { expect } = require('chai');
-const { ethers } = require('hardhat');
+import { ethers } from 'hardhat';
+import { expect } from 'chai';
 
 describe('Voting Contract', function () {
 	it('should deploy the contract return the manager and voters', async function () {
 		const Contract = await ethers.getContractFactory('Voting');
 		const contract = await Contract.deploy();
 
-		[manager, secondPerson, thirdPerson] = await ethers.getSigners();
+		const [manager, secondPerson, thirdPerson] = await ethers.getSigners();
 
 		await contract.deployed();
 
